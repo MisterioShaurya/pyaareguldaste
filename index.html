@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyaare Guldaste GC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.4);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #0f172a, #1e293b);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #f8fafc;
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+        }
+        
+        .rule-card {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .rule-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.5);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .btn-sparkle {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .btn-sparkle:hover {
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        
+        .btn-sparkle::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 0.7s, opacity 0.7s;
+        }
+        
+        .btn-sparkle:hover::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.2;
+            z-index: -1;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(5deg);
+            }
+        }
+        
+        .blob:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .blob:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: #8b5cf6;
+            top: 60%;
+            left: 70%;
+            animation-delay: 5s;
+        }
+        
+        .blob:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            background: #ec4899;
+            top: 30%;
+            left: 80%;
+            animation-delay: 7s;
+        }
+        
+        .blob:nth-child(4) {
+            width: 180px;
+            height: 180px;
+            background: #10b981;
+            top: 80%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+    <!-- Floating Blobs Background -->
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    
+    <!-- Main Content -->
+    <div class="w-full max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+            Pyaare Guldaste
+        </h1>
+        <p class="text-center text-blue-200 mb-12">Where conversations blossom like flowers</p>
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Rules Card -->
+            <div class="glass-card rounded-2xl p-6 flex-1">
+                <h2 class="text-2xl font-bold mb-6 text-blue-300 flex items-center">
+                    <i data-feather="shield" class="mr-2"></i> GC Rules
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="rule-card p-4 rounded-lg">
+                        <h3 class="font-semibold text-red-400 flex items-center">
+                            <i data-feather="x-circle" class="mr-2"></i> Strictly Prohibited
+                        </h3>
+                        <ul class="mt-2 ml-6 list-disc space-y-1 text-slate-300">
+                            <li>No toxicity or bullying</li>
+                            <li>No NSFW content</li>
+                            <li>No spamming</li>
+                            <li>No self-promotion</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rule-card p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-300 flex items-center">
+                            <i data-feather="award" class="mr-2"></i> Golden Rules
+                        </h3>
+                        <ul class="mt-2 ml-6 list-disc space-y-1 text-slate-300">
+                            <li>Respect everyone</li>
+                            <li>Keep it wholesome</li>
+                            <li>Help each other</li>
+                            <li>Have fun responsibly</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rule-card p-4 rounded-lg">
+                        <h3 class="font-semibold text-blue-300 flex items-center">
+                            <i data-feather="star" class="mr-2"></i> Ultimate Rule
+                        </h3>
+                        <p class="mt-2 ml-6 text-slate-300">
+                            Admins' word is final. Be nice or be gone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Join GC Card -->
+            <div class="glass-card rounded-2xl p-6 flex-1">
+                <h2 class="text-2xl font-bold mb-2 text-blue-300 flex items-center">
+                    <i data-feather="users" class="mr-2"></i> Join Our Family
+                </h2>
+                <p class="text-blue-200 mb-6">Become part of our blooming community</p>
+                
+                <button class="btn-sparkle w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-medium flex items-center justify-center mb-6">
+                    <i data-feather="message-square" class="mr-2"></i> Join GC Now
+                </button>
+                
+                <div>
+                    <h3 class="font-semibold text-blue-200 mb-3 flex items-center">
+                        <i data-feather="crown" class="mr-2"></i> Our Admins
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-blue-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Akshay</span>
+  <span class="ml-2 text-sm text-gray-400">@akshay_18vkvt</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-purple-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Kunal</span>
+  <span class="ml-2 text-sm text-gray-400">@not_kxnal</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-pink-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Shaurya</span>
+  <span class="ml-2 text-sm text-gray-400">@shauryaaverse</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-green-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Aditi</span>
+  <span class="ml-2 text-sm text-gray-400">@urr._aditi__</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-yellow-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Siya</span>
+  <span class="ml-2 text-sm text-gray-400">@imlittle_toxic</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-red-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Pallavi</span>
+  <span class="ml-2 text-sm text-gray-400">@cutie_bae_grl</span>
+</div>
+
+<div class="flex items-center p-2 rounded-lg bg-slate-800/30">
+  <div class="w-8 h-8 rounded-full bg-indigo-500 mr-3 flex items-center justify-center">
+    <i data-feather="user" class="w-4 h-4 text-white"></i>
+  </div>
+  <span class="font-medium">Sakshi</span>
+  <span class="ml-2 text-sm text-gray-400">@sa_k_shi143</span>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-slate-400">
+          Made with ❤️ by <span class="font-semibold text-blue-400">Shaurya</span> &amp; 
+  Crafted with ✨ by <span class="font-semibold text-purple-400">Kunal</span>
+    </footer>
+    
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.glass-card', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            opacity: 0,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+        
+        // Button sparkle effect
+        document.querySelector('.btn-sparkle').addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const spark = document.createElement('span');
+            spark.className = 'spark';
+            spark.style.left = `${x}px`;
+            spark.style.top = `${y}px`;
+            
+            this.appendChild(spark);
+            
+            setTimeout(() => spark.remove(), 1000);
+        });
+    </script>
+    <script>feather.replace();</script>
+</body>
+</html>
